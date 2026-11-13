@@ -1,0 +1,12 @@
+{
+  "kind": "query-body",
+  "data": {
+    "mode": "normal",
+    "target": "/query",
+    "received": [],
+    "seed": [
+      "batch-001",
+      "batch-002"
+    ]
+  }
+}

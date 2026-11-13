@@ -1,0 +1,11 @@
+{
+  "reject": {
+    "mode": "reject"
+  },
+  "redirect": {
+    "mode": "redirect"
+  },
+  "cut": {
+    "mode": "cut"
+  }
+}

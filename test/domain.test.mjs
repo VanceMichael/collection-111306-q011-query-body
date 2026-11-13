@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile,mkdtemp,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import * as domain from '../src/domain.mjs';
+const data=JSON.parse(await readFile(new URL('../fixtures/source.json',import.meta.url))).data;
+const {encodeQuery,bodyDigest,preview}=domain;
+test('资料对象的领域边界和原始预览',async()=>{assert.equal(bodyDigest(encodeQuery(data.seed)).length,64);
+assert.throws(()=>encodeQuery(['']));
+assert.equal(encodeQuery(['甲']).toString(),'{"batches":["甲"]}');});
